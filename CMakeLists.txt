@@ -1,9 +1,6 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 2.8)
 
-SET(CMAKE_C_COMPILER /usr/bin/gcc)
-SET(CMAKE_CXX_COMPILER /usr/bin/g++)
-
-project(aurigma)
+project(aurigma CXX)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_DEBUG} -std=c++11 -Wall -Wextra -pedantic")
 
@@ -18,4 +15,4 @@ include_directories(/usr/include)
 
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 
-target_link_libraries(${PROJECT_NAME} tiff)
+target_link_libraries(${PROJECT_NAME} tiff stdc++)
