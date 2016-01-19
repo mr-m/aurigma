@@ -5,7 +5,7 @@ compiler:
   - clang
 
 before_install:
-  - sudo apt-get install cmake
+  - sudo apt-get upgrade cmake
   - mkdir build
   - cd build
   - cmake --target all -- ..
