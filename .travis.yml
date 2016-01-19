@@ -13,7 +13,7 @@ addons:
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -qq cmake-3.3 -y
+  - sudo apt-get install -qq cmake -y
   - mkdir build
   - cd build
   - cmake --target all -- ..
