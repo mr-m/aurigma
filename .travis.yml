@@ -12,8 +12,8 @@ addons:
       - cmake
 
 before_install:
-  - sudo apt-get update
-  - sudo apt-get upgrade --fix-missing cmake
+  - sudo apt-get -qq update
+  - sudo apt-get install -qq cmake-3.3 -y
   - mkdir build
   - cd build
   - cmake --target all -- ..
