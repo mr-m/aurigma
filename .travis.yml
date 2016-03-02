@@ -1,3 +1,5 @@
+sudo: false
+
 language: cpp
 
 compiler:
@@ -8,35 +10,23 @@ addons:
   apt:
     sources:
       - kalakris-cmake
+      - ubuntu-toolchain-r-test
     packages:
       - cmake
-
-matrix:
-  include:
-    - compiler: gcc
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-5
-      env: COMPILER=g++-5
-    - compiler: clang
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.7
-          packages:
-            - clang-3.7
-      env: COMPILER=clang++-3.7
+      - gcc-4.8
+      - g++-4.8
+      - clang
 
 before_install:
-  - sudo apt-get -qq update
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
   - sudo apt-get install -qq cmake -y
   - mkdir build
   - cd build
   - cmake --target all -- ..
+
+install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
 
 script:
   - make clean
