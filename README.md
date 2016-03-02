@@ -1,4 +1,4 @@
-# Тестовое задание
+# Тестовое задание [![Build Status](https://travis-ci.org/mr-m/aurigma.svg?branch=master)](https://travis-ci.org/mr-m/aurigma)
 
 Нужно реализовать небольшой Graphics
 для рисования графических примитивов на растровом изображении.
