@@ -23,7 +23,7 @@ before_install:
   - sudo apt-get install -qq cmake -y
 
 install:
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; fi
   - gcc --version
   - g++ --version
 
