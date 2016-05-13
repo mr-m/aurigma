@@ -5,12 +5,13 @@
 class Point
 {
 public:
-	const int X{0};
-	const int Y{0};
+    const int X{0};
+    const int Y{0};
 
-	Point(int x = 0, int y = 0):
-		X(x),
-		Y(y) {}
+    Point(int x = 0, int y = 0):
+        X(x),
+        Y(y)
+    {}
 };
 
 

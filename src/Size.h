@@ -5,12 +5,13 @@
 class Size
 {
 public:
-	const unsigned int Width{0};
-	const unsigned int Height{0};
+    const unsigned int Width{0};
+    const unsigned int Height{0};
 
-	Size(unsigned int width = 0, unsigned int height = 0):
-		Width(width),
-		Height(height) {}
+    Size(unsigned int width = 0, unsigned int height = 0):
+        Width(width),
+        Height(height)
+    {}
 };
 
 
