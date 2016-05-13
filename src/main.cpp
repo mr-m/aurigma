@@ -7,6 +7,7 @@
 #include "Graphics.h"
 #include "TiffImage.h"
 
+
 void DrawStuffOnImage(TiffImage& img)
 {
     Graphics g = Graphics::FromImage(img);
@@ -27,7 +28,7 @@ void DrawStuffOnImage(TiffImage& img)
         Point(80, 40),
         Size(50, 30),
         Color::Grey);
-    
+
     g.DrawEllipse(
         Point(140, 50),
         Size(20, 46),

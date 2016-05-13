@@ -12,9 +12,9 @@
 class Graphics
 {
 public:
-	static Graphics FromImage(TiffImage&);
+    static Graphics FromImage(TiffImage&);
 
-	void FillWithColor(Color = Color());
+    void FillWithColor(Color = Color());
     void DrawLine(Point, Point, Color = Color());
     void DrawRectangle(Point, Size, Color = Color());
     void DrawPath(std::vector<Point>, Color = Color());
@@ -25,12 +25,12 @@ public:
 
 private:
     // Потенциально опасная ситуация: что если TiffImage будет удален раньше, чем Graphics?
-	TiffImage& _image;
+    TiffImage& _image;
 
-	Graphics(TiffImage& image):
-	    _image(image)
-	{}
-    
+    Graphics(TiffImage& image):
+        _image(image)
+    {}
+
     float getPt(float, float, float);
     void DrawEllipsePixels(Point, int, int, Color = Color());
 };
