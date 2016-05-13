@@ -24,6 +24,7 @@ public:
 //    static void DrawText(std::string, position);
 
 private:
+    // Потенциально опасная ситуация: что если TiffImage будет удален раньше, чем Graphics?
 	TiffImage& _image;
 
 	Graphics(TiffImage& image):
