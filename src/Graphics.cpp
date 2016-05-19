@@ -91,6 +91,8 @@ float Graphics::getPt(float n1, float n2, float perc)
 
 void Graphics::DrawBezier(Point p0, Point p1, Point p2, Point p3, Color color)
 {
+    // Было бы лучше использовать параметрическое уравнение кривой,
+    // плюс рисование с шагом 0.001 является далеко не самым оптимальным.
     DrawLine(p0, p1, Color::FromRgb(128,0,128));
     DrawLine(p2, p3, Color::FromRgb(128,0,128));
 
@@ -131,6 +133,7 @@ void Graphics::DrawEllipsePixels(Point pointC, int x, int y, Color color)
 
 void Graphics::DrawEllipse(Point pointC, Size size, Color color)
 {
+    // Эллипс можно было выразить через две кривые
     const int twoASquare = 2 * size.Width * size.Width;
     const int twoBSquare = 2 * size.Height * size.Height;
 

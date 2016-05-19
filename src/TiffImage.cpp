@@ -16,6 +16,8 @@ TiffImage::TiffImage(Size size, TiffImageMode mode):
     Height(size.Height),
     _mode(mode)
 {
+    // Лучше бы просто несколько типов Color'а, например RgbColor, CmykColor
+    // Ну и конвертацию туда лучше
     if (_mode == TiffImageMode::RGB)
     {
         _bitsPerSample = 8;
@@ -94,6 +96,8 @@ void TiffImage::SaveToFile(const std::string& filename)
 
 TiffImage::~TiffImage()
 {
+    // _image выделяется через new, а освобождается через _TIFFfree, что в общем случае некорректно.
+    // Вообще лучше бы smart pointer для таких вещей использовать.
     // Destroy the buffer
     if (_image) _TIFFfree(_image);
 }
